@@ -9,7 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
+  build_runner: ^2.4.12
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -17,3 +21,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
+
+
+flutter_intl:
+  enabled: true
+  arb_dir: lib/src/core/localization/l10n
+  output_dir: lib/src/core/localization/generated
