@@ -1,3 +1,5 @@
+import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
+import 'package:budget_tracker/src/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -78,13 +80,13 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
                     );
                   },
                   decoration: InputDecoration(
-                    labelText: 'Категория транзакции',
+                    labelText: S.of(context).transactionCategory,
                     floatingLabelBehavior: FloatingLabelBehavior.auto,
                     hintStyle: TextStyle(color: Colors.grey.shade400),
                   ),
                   validator: (value) {
                     if (value.isNullOrEmpty) {
-                      return 'Пожалуйста, выберите категорию';
+                      return S.of(context).pleaseSelectCategory;
                     }
                     return null;
                   },
@@ -103,6 +105,7 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
                 if (categoryController != null) {
                   showModalBottomSheet(
                     context: context,
+                    isScrollControlled: true,
                     builder: (_) => CategoryControllerProvider(
                       categoryController: categoryController!,
                       child: const CategoryBottomSheet(),
@@ -111,20 +114,20 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
                 }
               },
               decoration: InputDecoration(
-                labelText: 'Категория транзакции',
+                labelText: S.of(context).transactionCategory,
                 floatingLabelBehavior: FloatingLabelBehavior.auto,
                 hintStyle: TextStyle(color: Colors.grey.shade400),
               ),
               validator: (value) {
                 if (value.isNullOrEmpty) {
-                  return 'Пожалуйста, выберите категорию';
+                  return S.of(context).pleaseSelectCategory;
                 }
                 return null;
               },
             );
           }
         } else {
-          return const Text('Ошибка загрузки категорий');
+          return Text(S.of(context).categoryLoadingError);
         }
       },
     );
@@ -213,55 +216,65 @@ class _CategoryListState extends State<_CategoryList> {
             return const SizedBox.shrink();
           }
 
-          return ListView.separated(
-            shrinkWrap: true,
-            itemCount: state.categories.length,
-            separatorBuilder: (context, index) => const Divider(),
-            itemBuilder: (context, index) {
-              final category = state.categories[index];
+          return SingleChildScrollView(
+            child: ListView.separated(
+              shrinkWrap: true,
+              itemCount: state.categories.length,
+              separatorBuilder: (context, index) => const Divider(),
+              itemBuilder: (context, index) {
+                final category = state.categories[index];
 
-              return Row(
-                children: [
-                  Radio<CategoryModel>(
-                    value: category,
-                    groupValue: categoryController?.value,
-                    activeColor: const Color(0xffE1A815),
-                    onChanged: (CategoryModel? value) {
-                      setState(() {
-                        categoryController?.value = value;
-                      });
-                    },
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(category.title),
-                  ),
-                  PopupMenuButton<CategoryActionEnum>(
-                    icon: const Icon(Icons.more_vert),
-                    onSelected: (CategoryActionEnum result) {
-                      if (result == CategoryActionEnum.edit) {
-                        showModalBottomSheet(
-                          context: context,
-                          builder: (_) => EditCategoryForm(category),
-                        );
-                      } else {
-                        categoryCubit.removeCategory(category.id);
-                      }
-                    },
-                    itemBuilder: (BuildContext context) => [
-                      const PopupMenuItem<CategoryActionEnum>(
-                        value: CategoryActionEnum.edit,
-                        child: Text('Редактировать'),
+                return Row(
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          categoryController?.value = category;
+                          setState(() {});
+                        },
+                        child: Row(
+                          children: [
+                            Radio<CategoryModel>(
+                              value: category,
+                              groupValue: categoryController?.value,
+                              activeColor: AppTheme.urobilin,
+                              onChanged: (_) {},
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(category.title),
+                            ),
+                          ],
+                        ),
                       ),
-                      const PopupMenuItem<CategoryActionEnum>(
-                        value: CategoryActionEnum.remove,
-                        child: Text('Удалить'),
-                      ),
-                    ],
-                  ),
-                ],
-              );
-            },
+                    ),
+                    PopupMenuButton<CategoryActionEnum>(
+                      icon: const Icon(Icons.more_vert),
+                      onSelected: (CategoryActionEnum result) {
+                        if (result == CategoryActionEnum.edit) {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (_) => EditCategoryForm(category),
+                          );
+                        } else {
+                          categoryCubit.removeCategory(category.id);
+                        }
+                      },
+                      itemBuilder: (BuildContext context) => [
+                        const PopupMenuItem<CategoryActionEnum>(
+                          value: CategoryActionEnum.edit,
+                          child: Text('Редактировать'),
+                        ),
+                        const PopupMenuItem<CategoryActionEnum>(
+                          value: CategoryActionEnum.remove,
+                          child: Text('Удалить'),
+                        ),
+                      ],
+                    ),
+                  ],
+                );
+              },
+            ),
           );
         }
 

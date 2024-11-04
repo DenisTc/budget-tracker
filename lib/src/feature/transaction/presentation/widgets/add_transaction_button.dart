@@ -2,7 +2,7 @@ import 'package:budget_tracker/src/core/extension/datetime_extension.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
 import 'package:budget_tracker/src/feature/transaction/data/models/transaction_model.dart';
-import 'package:budget_tracker/src/feature/transaction/presentation/bloc/transaction_bloc.dart';
+import 'package:budget_tracker/src/feature/transaction/presentation/cubit/transaction_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +27,7 @@ class AddTransactionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: BlocListener<TransactionBloc, TransactionState>(
+      child: BlocListener<TransactionCubit, TransactionState>(
         listener: (context, state) {
           if (state is TransactionAddSuccess) {
             context.read<TransactionListCubit>().getTransactions();
@@ -54,7 +54,7 @@ class AddTransactionButton extends StatelessWidget {
                     DateTime.now(),
               );
 
-              context.read<TransactionBloc>().add(AddTransaction(transaction));
+              context.read<TransactionCubit>().addTransaction(transaction);
             }
           },
           child: Text(

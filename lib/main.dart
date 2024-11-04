@@ -4,6 +4,7 @@ import 'package:budget_tracker/src/core/theme/app_theme.dart';
 import 'package:budget_tracker/src/feature/category/presentation/cubit/category_cubit.dart';
 import 'package:budget_tracker/src/feature/category_list/presentation/cubit/category_list_cubit.dart';
 import 'package:budget_tracker/src/feature/dashboard/dashboard.dart';
+import 'package:budget_tracker/src/feature/transaction/presentation/cubit/transaction_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +25,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<TransactionCubit>(
+          create: (context) => getIt<TransactionCubit>(),
+        ),
         BlocProvider<TransactionListCubit>(
           create: (context) => getIt<TransactionListCubit>(),
         ),

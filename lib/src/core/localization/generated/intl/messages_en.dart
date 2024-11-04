@@ -30,10 +30,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "category": MessageLookupByLibrary.simpleMessage("Категория"),
         "categoryLoadingError":
             MessageLookupByLibrary.simpleMessage("Ошибка загрузки категорий"),
+        "categoryName":
+            MessageLookupByLibrary.simpleMessage("Название категории"),
+        "categoryNameAlreadyExists": MessageLookupByLibrary.simpleMessage(
+            "Категория с таким именем уже существует"),
         "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
         "dateNdate": m0,
+        "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
+            "Укажите название новой категории"),
         "expense": MessageLookupByLibrary.simpleMessage("Расход"),
+        "failedToAddCategory": MessageLookupByLibrary.simpleMessage(
+            "Не удалось добавить категорию, попробуйте позже"),
         "income": MessageLookupByLibrary.simpleMessage("Доход"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "pleaseEnterAmount":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, введите сумму"),
         "pleaseEnterAmountGreaterThanZero":

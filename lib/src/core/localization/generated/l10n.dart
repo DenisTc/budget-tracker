@@ -249,6 +249,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Название категории`
+  String get categoryName {
+    return Intl.message(
+      'Название категории',
+      name: 'categoryName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Укажите название новой категории`
+  String get enterNewCategoryName {
+    return Intl.message(
+      'Укажите название новой категории',
+      name: 'enterNewCategoryName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Категория с таким именем уже существует`
+  String get categoryNameAlreadyExists {
+    return Intl.message(
+      'Категория с таким именем уже существует',
+      name: 'categoryNameAlreadyExists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Не удалось добавить категорию, попробуйте позже`
+  String get failedToAddCategory {
+    return Intl.message(
+      'Не удалось добавить категорию, попробуйте позже',
+      name: 'failedToAddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ок`
+  String get ok {
+    return Intl.message(
+      'Ок',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

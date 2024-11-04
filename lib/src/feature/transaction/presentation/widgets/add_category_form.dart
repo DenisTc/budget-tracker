@@ -1,4 +1,5 @@
 import 'package:budget_tracker/src/core/constant/app_sizes.dart';
+import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
 import 'package:budget_tracker/src/feature/category/presentation/cubit/category_cubit.dart';
 import 'package:budget_tracker/src/feature/category_list/presentation/cubit/category_list_cubit.dart';
@@ -28,7 +29,6 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
@@ -41,14 +41,15 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
+              const SizedBox(height: 8),
               TextFormField(
                 controller: titleController,
-                decoration: const InputDecoration(
-                  labelText: 'Название категории',
+                decoration: InputDecoration(
+                  labelText: S.of(context).categoryName,
                 ),
                 validator: (value) {
                   if (value.isNullOrEmpty) {
-                    return 'Укажите название новой категории';
+                    return S.of(context).enterNewCategoryName;
                   }
                   return null;
                 },
@@ -62,10 +63,10 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
                       context.read<CategoryListCubit>().getCategories();
                       Navigator.pop(context);
                     } else if (state is CategoryError) {
-                      final message = state.error.name ==
-                              CategoryErrorEnum.isExist.name
-                          ? 'Категория с таким именем уже существует'
-                          : 'Не удалось добавить категорию, попробуйте позже';
+                      final message =
+                          state.error.name == CategoryErrorEnum.isExist.name
+                              ? S.of(context).categoryNameAlreadyExists
+                              : S.of(context).failedToAddCategory;
                       showErorDialog(context, message: message);
                     }
                   },
@@ -79,7 +80,7 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
                         context.read<CategoryCubit>().addCategory(category);
                       }
                     },
-                    child: const Text('Добавить'),
+                    child: Text(S.of(context).add),
                   ),
                 ),
               ),
@@ -99,7 +100,7 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
           content: Text(message),
           actions: [
             TextButton(
-              child: const Text('Ок'),
+              child: Text(S.of(context).ok),
               onPressed: () {
                 Navigator.of(context).pop();
               },

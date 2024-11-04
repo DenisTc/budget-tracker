@@ -4,9 +4,11 @@ import 'package:budget_tracker/src/feature/transaction/domain/usecases/add_trans
 import 'package:budget_tracker/src/feature/transaction/domain/usecases/remove_transaction.dart';
 import 'package:budget_tracker/src/feature/transaction/domain/usecases/update_transaction.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 
 part 'transaction_state.dart';
 
+@singleton
 class TransactionCubit extends Cubit<TransactionState> {
   final AddTransactionUseCase _addTransaction;
   final RemoveTransactionUseCase _removeTransaction;
@@ -21,6 +23,7 @@ class TransactionCubit extends Cubit<TransactionState> {
         super(TransactionInitial());
 
   Future<void> addTransaction(TransactionModel transaction) async {
+    emit(TransactionLoading());
     try {
       await _addTransaction(transaction);
       emit(TransactionAddSuccess());
@@ -30,6 +33,7 @@ class TransactionCubit extends Cubit<TransactionState> {
   }
 
   Future<void> removeTransaction(int id) async {
+    emit(TransactionLoading());
     try {
       await _removeTransaction(id);
       emit(TransactionRemoveSuccess());
@@ -39,6 +43,7 @@ class TransactionCubit extends Cubit<TransactionState> {
   }
 
   Future<void> updateTransaction(TransactionModel transaction) async {
+    emit(TransactionLoading());
     try {
       await _updateTransaction(transaction);
       emit(TransactionUpdateSuccess());

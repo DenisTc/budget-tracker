@@ -17,6 +17,7 @@ class TransactionListCubit extends Cubit<TransactionListState> {
     DateTime? startDate,
     DateTime? endDate,
   }) async {
+    emit(TransactionListLoading());
     try {
       final result = await _getTransactions();
       emit(TransactionListLoadSuccess(result));

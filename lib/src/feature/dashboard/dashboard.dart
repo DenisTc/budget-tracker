@@ -1,4 +1,5 @@
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
+import 'package:budget_tracker/src/feature/transaction/presentation/add_transaction_screen.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/transaction_list_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,11 @@ class _DashboardState extends State<Dashboard> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AddTransactionScreen(),
+          ),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(

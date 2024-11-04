@@ -28,6 +28,7 @@ class CategoryCubit extends Cubit<CategoryState> {
         super(CategoryLoading());
 
   Future<void> addCategory(CategoryModel category) async {
+    emit(CategoryLoading());
     try {
       final isExist = await _checkIsExistCategory(category.title);
       if (isExist) {
@@ -42,6 +43,7 @@ class CategoryCubit extends Cubit<CategoryState> {
   }
 
   Future<void> removeCategory(int id) async {
+    emit(CategoryLoading());
     try {
       await _removeCategory(id);
       emit(CategoryRemoveSuccess());
@@ -51,6 +53,7 @@ class CategoryCubit extends Cubit<CategoryState> {
   }
 
   Future<void> updateCategory(CategoryModel category) async {
+    emit(CategoryLoading());
     try {
       await _updateCategory(category);
       emit(CategoryUpdateSuccess());

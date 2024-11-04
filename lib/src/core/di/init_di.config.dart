@@ -37,6 +37,8 @@ import '../../feature/transaction/domain/usecases/remove_transaction.dart'
     as _i368;
 import '../../feature/transaction/domain/usecases/update_transaction.dart'
     as _i739;
+import '../../feature/transaction/presentation/cubit/transaction_cubit.dart'
+    as _i217;
 import '../../feature/transaction_list/presentation/cubit/transaction_list_cubit.dart'
     as _i444;
 import '../database/app_database.dart' as _i982;
@@ -82,6 +84,11 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i368.RemoveTransactionUseCase(gh<_i17.TransactionRepository>()));
     gh.singleton<_i444.TransactionListCubit>(
         () => _i444.TransactionListCubit(gh<_i675.GetTransactionsUseCase>()));
+    gh.singleton<_i217.TransactionCubit>(() => _i217.TransactionCubit(
+          addTransaction: gh<_i974.AddTransactionUseCase>(),
+          removeTransaction: gh<_i368.RemoveTransactionUseCase>(),
+          updateTransaction: gh<_i739.UpdateTransactionUseCase>(),
+        ));
     gh.singleton<_i171.CategoryListCubit>(
         () => _i171.CategoryListCubit(gh<_i863.GetCategoriesUseCase>()));
     gh.singleton<_i618.CategoryCubit>(() => _i618.CategoryCubit(

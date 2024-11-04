@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
+  static const Color urobilin = Color(0xffE1A815);
+
   static ThemeData get lightTheme {
     return ThemeData(
       brightness: Brightness.light,

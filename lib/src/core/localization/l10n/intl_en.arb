@@ -18,5 +18,10 @@
   "date": "Дата: $date",
   "dateNdate": "Дата: {date}",
   "categoryLoadingError": "Ошибка загрузки категорий",
-  "transactionCategory": "Категория транзакции"
+  "transactionCategory": "Категория транзакции",
+  "categoryName": "Название категории",
+  "enterNewCategoryName": "Укажите название новой категории",
+  "categoryNameAlreadyExists": "Категория с таким именем уже существует",
+  "failedToAddCategory": "Не удалось добавить категорию, попробуйте позже",
+  "ok": "Ок"
 }
