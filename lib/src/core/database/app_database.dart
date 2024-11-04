@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:budget_tracker/src/core/database/daos/categories/categories_dao.dart';
+import 'package:budget_tracker/src/core/database/daos/transactions/transactions_dao.dart';
 import 'package:budget_tracker/src/core/database/tables/categories.dart';
+import 'package:budget_tracker/src/core/database/tables/transactions.dart';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path_provider/path_provider.dart';
@@ -12,8 +14,10 @@ part 'app_database.g.dart';
 @DriftDatabase(
   tables: [
     CategoriesDataModel,
+    TransactionsDataModel,
   ],
   daos: [
+    TransactionsDao,
     CategoriesDao,
   ],
 )

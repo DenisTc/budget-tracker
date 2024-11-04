@@ -1,12 +1,13 @@
 import 'package:budget_tracker/src/core/database/app_database.dart';
 import 'package:budget_tracker/src/core/database/tables/categories.dart';
+import 'package:budget_tracker/src/core/database/tables/transactions.dart';
 import 'package:drift/drift.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
 
 part 'categories_dao.g.dart';
 
 @DriftAccessor(
-  tables: [CategoriesDataModel],
+  tables: [CategoriesDataModel, TransactionsDataModel],
 )
 class CategoriesDao extends DatabaseAccessor<AppDatabase>
     with _$CategoriesDaoMixin {
@@ -44,6 +45,14 @@ class CategoriesDao extends DatabaseAccessor<AppDatabase>
 
     final result = await query.get();
     return result.isNotEmpty;
+  }
+
+  Future<bool> isCanBeDelete(int categoryId) async {
+    final count = await (select(transactionsDataModel)
+          ..where((t) => t.categoryId.equals(categoryId)))
+        .get();
+
+    return count.isEmpty;
   }
 
   Future<void> remove(int id) async {

@@ -69,6 +69,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Тип транзакции`
+  String get typeOfTransaction {
+    return Intl.message(
+      'Тип транзакции',
+      name: 'typeOfTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Добавить транзакцию`
+  String get addTransaction {
+    return Intl.message(
+      'Добавить транзакцию',
+      name: 'addTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Добавить`
+  String get add {
+    return Intl.message(
+      'Добавить',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Категория`
+  String get category {
+    return Intl.message(
+      'Категория',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, выберите категорию`
+  String get pleaseSelectCategory {
+    return Intl.message(
+      'Пожалуйста, выберите категорию',
+      name: 'pleaseSelectCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Выберите дату`
+  String get selectDate {
+    return Intl.message(
+      'Выберите дату',
+      name: 'selectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, выберите дату`
+  String get pleaseSelectDate {
+    return Intl.message(
+      'Пожалуйста, выберите дату',
+      name: 'pleaseSelectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Сумма транзакции`
+  String get sumOfTransaction {
+    return Intl.message(
+      'Сумма транзакции',
+      name: 'sumOfTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите сумму`
+  String get pleaseEnterAmount {
+    return Intl.message(
+      'Пожалуйста, введите сумму',
+      name: 'pleaseEnterAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите сумму больше 0`
+  String get pleaseEnterAmountGreaterThanZero {
+    return Intl.message(
+      'Пожалуйста, введите сумму больше 0',
+      name: 'pleaseEnterAmountGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расход`
+  String get expense {
+    return Intl.message(
+      'Расход',
+      name: 'expense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Доход`
+  String get income {
+    return Intl.message(
+      'Доход',
+      name: 'income',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, выберите тип транзакции`
+  String get pleaseSelectTransactionType {
+    return Intl.message(
+      'Пожалуйста, выберите тип транзакции',
+      name: 'pleaseSelectTransactionType',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

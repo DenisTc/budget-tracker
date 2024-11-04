@@ -1,0 +1,4 @@
+enum CategoryActionEnum {
+  edit,
+  remove,
+}
