@@ -13,34 +13,11 @@ class TransactionsDao extends DatabaseAccessor<AppDatabase>
     with _$TransactionsDaoMixin {
   TransactionsDao(super.db);
 
-  // Future<List<Transaction>> getTransactions({
-  //   DateTime? startDate,
-  //   DateTime? endDate,
-  // }) async {
-  //   final query = select(transactionsDataModel);
-
-  //   if (startDate != null || endDate != null) {
-  //     if (startDate != null) {
-  //       query.where((tbl) => tbl.date.isBiggerOrEqualValue(startDate));
-  //     }
-
-  //     if (endDate != null) {
-  //       query.where((tbl) => tbl.date.isSmallerOrEqualValue(endDate));
-  //     }
-  //   }
-
-  //   query.orderBy([
-  //     (tbl) => OrderingTerm(expression: tbl.date, mode: OrderingMode.desc),
-  //   ]);
-
-  //   final items = await query.get();
-
-  //   return items.map((item) => item.toGetTransaction()).toList();
-  // }
-
   Future<List<TransactionModel>> getTransactions({
     DateTime? startDate,
     DateTime? endDate,
+    int? categoryId,
+    int? type,
   }) async {
     final query = select(transactionsDataModel);
 
@@ -52,6 +29,14 @@ class TransactionsDao extends DatabaseAccessor<AppDatabase>
       if (endDate != null) {
         query.where((tbl) => tbl.date.isSmallerOrEqualValue(endDate));
       }
+    }
+
+    if (categoryId != null) {
+      query.where((tbl) => tbl.categoryId.equals(categoryId));
+    }
+
+    if (type != null) {
+      query.where((tbl) => tbl.typeId.equals(type));
     }
 
     query.orderBy([

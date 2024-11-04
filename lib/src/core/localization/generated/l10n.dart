@@ -299,6 +299,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Применить`
+  String get accept {
+    return Intl.message(
+      'Применить',
+      name: 'accept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очистить фильтры`
+  String get clearFilters {
+    return Intl.message(
+      'Очистить фильтры',
+      name: 'clearFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очистить`
+  String get clear {
+    return Intl.message(
+      'Очистить',
+      name: 'clear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Укажите дату`
+  String get enterDate {
+    return Intl.message(
+      'Укажите дату',
+      name: 'enterDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Период`
+  String get period {
+    return Intl.message(
+      'Период',
+      name: 'period',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

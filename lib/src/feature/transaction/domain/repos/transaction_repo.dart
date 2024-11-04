@@ -4,6 +4,8 @@ abstract interface class TransactionRepository {
   Future<List<TransactionModel>> getTransactions({
     DateTime? startDate,
     DateTime? endDate,
+    int? categoryId,
+    int? type,
   });
 
   Future<void> add(TransactionModel transaction);

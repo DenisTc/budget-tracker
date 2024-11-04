@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accept": MessageLookupByLibrary.simpleMessage("Применить"),
         "add": MessageLookupByLibrary.simpleMessage("Добавить"),
         "addTransaction":
             MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
@@ -34,8 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Название категории"),
         "categoryNameAlreadyExists": MessageLookupByLibrary.simpleMessage(
             "Категория с таким именем уже существует"),
+        "clear": MessageLookupByLibrary.simpleMessage("Очистить"),
+        "clearFilters":
+            MessageLookupByLibrary.simpleMessage("Очистить фильтры"),
         "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
         "dateNdate": m0,
+        "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
         "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
             "Укажите название новой категории"),
         "expense": MessageLookupByLibrary.simpleMessage("Расход"),
@@ -43,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Не удалось добавить категорию, попробуйте позже"),
         "income": MessageLookupByLibrary.simpleMessage("Доход"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
+        "period": MessageLookupByLibrary.simpleMessage("Период"),
         "pleaseEnterAmount":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, введите сумму"),
         "pleaseEnterAmountGreaterThanZero":

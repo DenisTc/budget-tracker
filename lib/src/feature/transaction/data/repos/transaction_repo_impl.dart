@@ -17,10 +17,14 @@ class TransactionRepositoryImpl implements TransactionRepository {
   Future<List<TransactionModel>> getTransactions({
     DateTime? startDate,
     DateTime? endDate,
+    int? categoryId,
+    int? type,
   }) async =>
       _localDataSource.getTransactions(
         startDate: startDate,
         endDate: endDate,
+        categoryId: categoryId,
+        type: type,
       );
 
   @override

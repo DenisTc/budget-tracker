@@ -23,5 +23,10 @@
   "enterNewCategoryName": "Укажите название новой категории",
   "categoryNameAlreadyExists": "Категория с таким именем уже существует",
   "failedToAddCategory": "Не удалось добавить категорию, попробуйте позже",
-  "ok": "Ок"
+  "ok": "Ок",
+  "accept": "Применить",
+  "clearFilters": "Очистить фильтры",
+  "clear": "Очистить",
+  "enterDate": "Укажите дату",
+  "period": "Период"
 }

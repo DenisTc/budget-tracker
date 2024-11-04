@@ -12,6 +12,12 @@ class AppTheme {
       colorScheme: const ColorScheme.light(
         primary: Colors.black,
         onPrimary: Colors.white,
+        secondary: Color(0xFFE8A8A1),
+        onSecondary: Colors.white,
+        surface: Colors.white,
+        onSurface: Colors.black,
+        error: Colors.redAccent,
+        onError: Colors.white,
         brightness: Brightness.light,
       ),
     );

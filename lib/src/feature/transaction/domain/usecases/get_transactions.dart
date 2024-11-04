@@ -11,9 +11,13 @@ class GetTransactionsUseCase {
   Future<List<TransactionModel>> call({
     DateTime? startDate,
     DateTime? endDate,
+    int? categoryId,
+    int? type,
   }) async =>
       _transactionRepository.getTransactions(
         startDate: startDate,
         endDate: endDate,
+        categoryId: categoryId,
+        type: type,
       );
 }
