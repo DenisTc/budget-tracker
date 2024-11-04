@@ -50,7 +50,6 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
 
     categoryController =
         CategoryControllerProvider.of(context)?.categoryController;
-    print(categoryController);
   }
 
   @override

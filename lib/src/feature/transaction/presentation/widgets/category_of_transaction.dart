@@ -48,13 +48,13 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
                 );
               },
               decoration: InputDecoration(
-                labelText: 'Категория транзакции',
+                labelText: S.of(context).transactionCategory,
                 floatingLabelBehavior: FloatingLabelBehavior.auto,
                 hintStyle: TextStyle(color: Colors.grey.shade400),
               ),
               validator: (value) {
                 if (value.isNullOrEmpty) {
-                  return 'Пожалуйста, выберите категорию';
+                  return S.of(context).pleaseSelectCategory;
                 }
                 return null;
               },
@@ -95,7 +95,7 @@ class _CategoryOfTransactionState extends State<CategoryOfTransaction> {
             );
           }
         } else {
-          return Text('Ошибка загрузки категорий');
+          return Text(S.of(context).categoryLoadingError);
         }
       },
     );

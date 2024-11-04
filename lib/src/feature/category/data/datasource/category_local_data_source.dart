@@ -1,5 +1,6 @@
 import 'package:budget_tracker/src/core/database/app_database.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
+import 'package:injectable/injectable.dart';
 
 abstract interface class CategoryLocalDataSource {
   Future<List<CategoryModel>> getCategories();
@@ -13,6 +14,7 @@ abstract interface class CategoryLocalDataSource {
   Future<bool> checkIsExist(String title);
 }
 
+@LazySingleton(as: CategoryLocalDataSource)
 class CategoryLocalDataSourceImpl implements CategoryLocalDataSource {
   final AppDatabase db;
 

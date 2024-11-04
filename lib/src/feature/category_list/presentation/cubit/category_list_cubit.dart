@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
@@ -6,6 +7,7 @@ import 'package:budget_tracker/src/feature/category/domain/usecases/get_categori
 
 part 'category_list_state.dart';
 
+@singleton
 class CategoryListCubit extends Cubit<CategoryListState> {
   final GetCategoriesUseCase _getCategoriesUseCase;
   CategoryListCubit(final GetCategoriesUseCase getCategoriesUseCase)

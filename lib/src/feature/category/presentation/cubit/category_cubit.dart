@@ -5,9 +5,11 @@ import 'package:budget_tracker/src/feature/category/domain/usecases/check_is_exi
 import 'package:budget_tracker/src/feature/category/domain/usecases/remove_category.dart';
 import 'package:budget_tracker/src/feature/category/domain/usecases/update_category.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 
 part 'category_state.dart';
 
+@singleton
 class CategoryCubit extends Cubit<CategoryState> {
   final AddCategoryUseCase _addCategory;
   final RemoveCategoryUseCase _removeCategory;

@@ -1,4 +1,22 @@
 {
   "transactions": "Транзакции",
-  "statistics": "Статистика"
+  "statistics": "Статистика",
+  "addTransaction": "Добавить транзакцию",
+  "sumOfTransaction": "Сумма транзакции",
+  "category": "Категория",
+  "typeOfTransaction": "Тип транзакции",
+  "expense": "Расход",
+  "income": "Доход",
+  "add": "Добавить",
+  "selectDate": "Выберите дату",
+  "pleaseSelectTransactionType": "Пожалуйста, выберите тип транзакции",
+  "pleaseEnterAmount": "Пожалуйста, введите сумму",
+  "pleaseEnterAmountGreaterThanZero": "Пожалуйста, введите сумму больше 0",
+  "pleaseSelectCategory": "Пожалуйста, выберите категорию",
+  "pleaseSelectDate": "Пожалуйста, выберите дату",
+  "yourTransactions": "Ваши транзакции",
+  "date": "Дата: $date",
+  "dateNdate": "Дата: {date}",
+  "categoryLoadingError": "Ошибка загрузки категорий",
+  "transactionCategory": "Категория транзакции"
 }

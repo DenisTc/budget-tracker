@@ -1,7 +1,9 @@
 import 'package:budget_tracker/src/feature/category/data/datasource/category_local_data_source.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
 import 'package:budget_tracker/src/feature/category/domain/repos/transaction_repo.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: CategoryRepository)
 class CategoryRepositoryImpl implements CategoryRepository {
   const CategoryRepositoryImpl(this._localDataSource);
 

@@ -1,4 +1,5 @@
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
+import 'package:budget_tracker/src/feature/transaction_list/presentation/transaction_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -14,7 +15,7 @@ class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const Placeholder(),
+    const TransactionListScreen(),
     const Placeholder(),
   ];
 

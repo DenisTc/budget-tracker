@@ -3,6 +3,7 @@ import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
 import 'package:budget_tracker/src/feature/transaction/data/models/transaction_model.dart';
 import 'package:budget_tracker/src/feature/transaction/presentation/bloc/transaction_bloc.dart';
+import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +30,7 @@ class AddTransactionButton extends StatelessWidget {
       child: BlocListener<TransactionBloc, TransactionState>(
         listener: (context, state) {
           if (state is TransactionAddSuccess) {
-            // TODO: Добавить обновление списка транзакций
+            context.read<TransactionListCubit>().getTransactions();
             Navigator.pop(context);
           }
         },

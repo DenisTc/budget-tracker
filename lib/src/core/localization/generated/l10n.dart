@@ -70,71 +70,11 @@ class S {
     );
   }
 
-  /// `Тип транзакции`
-  String get typeOfTransaction {
-    return Intl.message(
-      'Тип транзакции',
-      name: 'typeOfTransaction',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Добавить транзакцию`
   String get addTransaction {
     return Intl.message(
       'Добавить транзакцию',
       name: 'addTransaction',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Добавить`
-  String get add {
-    return Intl.message(
-      'Добавить',
-      name: 'add',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Категория`
-  String get category {
-    return Intl.message(
-      'Категория',
-      name: 'category',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Пожалуйста, выберите категорию`
-  String get pleaseSelectCategory {
-    return Intl.message(
-      'Пожалуйста, выберите категорию',
-      name: 'pleaseSelectCategory',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Выберите дату`
-  String get selectDate {
-    return Intl.message(
-      'Выберите дату',
-      name: 'selectDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Пожалуйста, выберите дату`
-  String get pleaseSelectDate {
-    return Intl.message(
-      'Пожалуйста, выберите дату',
-      name: 'pleaseSelectDate',
       desc: '',
       args: [],
     );
@@ -150,21 +90,21 @@ class S {
     );
   }
 
-  /// `Пожалуйста, введите сумму`
-  String get pleaseEnterAmount {
+  /// `Категория`
+  String get category {
     return Intl.message(
-      'Пожалуйста, введите сумму',
-      name: 'pleaseEnterAmount',
+      'Категория',
+      name: 'category',
       desc: '',
       args: [],
     );
   }
 
-  /// `Пожалуйста, введите сумму больше 0`
-  String get pleaseEnterAmountGreaterThanZero {
+  /// `Тип транзакции`
+  String get typeOfTransaction {
     return Intl.message(
-      'Пожалуйста, введите сумму больше 0',
-      name: 'pleaseEnterAmountGreaterThanZero',
+      'Тип транзакции',
+      name: 'typeOfTransaction',
       desc: '',
       args: [],
     );
@@ -190,11 +130,121 @@ class S {
     );
   }
 
+  /// `Добавить`
+  String get add {
+    return Intl.message(
+      'Добавить',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Выберите дату`
+  String get selectDate {
+    return Intl.message(
+      'Выберите дату',
+      name: 'selectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Пожалуйста, выберите тип транзакции`
   String get pleaseSelectTransactionType {
     return Intl.message(
       'Пожалуйста, выберите тип транзакции',
       name: 'pleaseSelectTransactionType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите сумму`
+  String get pleaseEnterAmount {
+    return Intl.message(
+      'Пожалуйста, введите сумму',
+      name: 'pleaseEnterAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, введите сумму больше 0`
+  String get pleaseEnterAmountGreaterThanZero {
+    return Intl.message(
+      'Пожалуйста, введите сумму больше 0',
+      name: 'pleaseEnterAmountGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, выберите категорию`
+  String get pleaseSelectCategory {
+    return Intl.message(
+      'Пожалуйста, выберите категорию',
+      name: 'pleaseSelectCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Пожалуйста, выберите дату`
+  String get pleaseSelectDate {
+    return Intl.message(
+      'Пожалуйста, выберите дату',
+      name: 'pleaseSelectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ваши транзакции`
+  String get yourTransactions {
+    return Intl.message(
+      'Ваши транзакции',
+      name: 'yourTransactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Дата: $date`
+  String get date {
+    return Intl.message(
+      'Дата: \$date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Дата: {date}`
+  String dateNdate(Object date) {
+    return Intl.message(
+      'Дата: $date',
+      name: 'dateNdate',
+      desc: '',
+      args: [date],
+    );
+  }
+
+  /// `Ошибка загрузки категорий`
+  String get categoryLoadingError {
+    return Intl.message(
+      'Ошибка загрузки категорий',
+      name: 'categoryLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Категория транзакции`
+  String get transactionCategory {
+    return Intl.message(
+      'Категория транзакции',
+      name: 'transactionCategory',
       desc: '',
       args: [],
     );

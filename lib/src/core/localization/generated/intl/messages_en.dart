@@ -20,9 +20,41 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(date) => "Дата: ${date}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("Добавить"),
+        "addTransaction":
+            MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
+        "category": MessageLookupByLibrary.simpleMessage("Категория"),
+        "categoryLoadingError":
+            MessageLookupByLibrary.simpleMessage("Ошибка загрузки категорий"),
+        "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
+        "dateNdate": m0,
+        "expense": MessageLookupByLibrary.simpleMessage("Расход"),
+        "income": MessageLookupByLibrary.simpleMessage("Доход"),
+        "pleaseEnterAmount":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста, введите сумму"),
+        "pleaseEnterAmountGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Пожалуйста, введите сумму больше 0"),
+        "pleaseSelectCategory": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, выберите категорию"),
+        "pleaseSelectDate":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста, выберите дату"),
+        "pleaseSelectTransactionType": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, выберите тип транзакции"),
+        "selectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
         "statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
-        "transactions": MessageLookupByLibrary.simpleMessage("Транзакции")
+        "sumOfTransaction":
+            MessageLookupByLibrary.simpleMessage("Сумма транзакции"),
+        "transactionCategory":
+            MessageLookupByLibrary.simpleMessage("Категория транзакции"),
+        "transactions": MessageLookupByLibrary.simpleMessage("Транзакции"),
+        "typeOfTransaction":
+            MessageLookupByLibrary.simpleMessage("Тип транзакции"),
+        "yourTransactions":
+            MessageLookupByLibrary.simpleMessage("Ваши транзакции")
       };
 }
