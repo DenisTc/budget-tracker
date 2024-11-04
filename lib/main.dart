@@ -1,4 +1,5 @@
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
+import 'package:budget_tracker/src/core/theme/app_theme.dart';
 import 'package:budget_tracker/src/feature/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,6 +14,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
