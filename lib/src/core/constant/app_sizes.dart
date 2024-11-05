@@ -8,6 +8,7 @@ class AppSizes {
   static const p24 = 24.0;
 
   static SizedBox get gapW8 => const SizedBox(width: p8);
+  static SizedBox get gapW16 => const SizedBox(width: p16);
 
   static SizedBox get gapH8 => const SizedBox(height: p8);
   static SizedBox get gapH16 => const SizedBox(height: p16);

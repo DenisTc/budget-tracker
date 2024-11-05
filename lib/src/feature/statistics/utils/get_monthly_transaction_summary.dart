@@ -4,132 +4,108 @@ import 'package:budget_tracker/src/feature/statistics/data/models/monthly_transa
 import 'package:budget_tracker/src/feature/transaction/domain/entities/transaction.dart';
 import 'package:intl/intl.dart';
 
-/// Генерирует список сводных данных по транзакциям за каждый месяц.
-///
-/// Сначала сортирует транзакции по дате, чтобы они шли от самых старых
-/// к самым новым. Затем группируем транзакции по месяцам, подсчитываем доходы, расходы
-/// и кол-во операций для каждой категории в каждом месяце.
-///
-/// Параметры:
-/// - [transactions]: Список транзакций.
-///
-/// Возвращаем:
-/// - Список объектов MonthlyTransactionSummaryModel, где каждый объект представляет данные
-/// за отдельный месяц.
-List<MonthlyTransactionSummaryModel> getMonthlyTransactionSummary(
+List<MonthlyTransactionSummaryModel> summarizeTransactions(
   List<Transaction> transactions,
 ) {
   transactions.sort((a, b) => a.date.compareTo(b.date));
 
-  final Map<String, Map<String, dynamic>> monthlyDataMap = {};
+  final groupedTransactions = _groupTransactionsByMonth(transactions);
+
+  return _generateMonthlySummaries(groupedTransactions);
+}
+
+Map<String, List<Transaction>> _groupTransactionsByMonth(
+  List<Transaction> transactions,
+) {
+  Map<String, List<Transaction>> groupedTransactions = {};
 
   for (var transaction in transactions) {
-    final monthKey = _getMonthKeyForMap(transaction.date);
-
-    _initializeMonthDataIfAbsent(
-      monthlyDataMap,
-      monthKey,
-      transaction.date,
-    );
-
-    final monthData = monthlyDataMap[monthKey]!;
-
-    _updateCategoryData(
-      monthData,
-      transaction.category.title,
-      transaction.typeId,
-      transaction.sum,
-    );
+    final monthKey = DateFormat('MMMM-yyyy', 'ru').format(transaction.date);
+    if (groupedTransactions.containsKey(monthKey)) {
+      groupedTransactions[monthKey]!.add(transaction);
+    } else {
+      groupedTransactions[monthKey] = [transaction];
+    }
   }
 
-  return _mapToMonthlyTransactionSummaryList(monthlyDataMap);
+  return groupedTransactions;
 }
 
-String _getMonthKeyForMap(DateTime date) {
-  return "${_getMonthName(date.month)} ${date.year}";
-}
-
-String _getMonthName(int month) {
-  return DateFormat('MMMM', 'ru').format(DateTime(0, month));
-}
-
-/// Формируем данные за месяц, если их ещё нет.
-void _initializeMonthDataIfAbsent(
-  Map<String, Map<String, dynamic>> monthlyDataMap,
-  String monthKey,
-  DateTime date,
+List<MonthlyTransactionSummaryModel> _generateMonthlySummaries(
+  Map<String, List<Transaction>> groupedTransactions,
 ) {
-  if (!monthlyDataMap.containsKey(monthKey)) {
-    monthlyDataMap[monthKey] = {
-      'year': date.year,
-      'categories': <String, Map<String, dynamic>>{},
-      'totalIncome': 0.0,
-      'totalExpense': 0.0,
-    };
-  }
+  List<MonthlyTransactionSummaryModel> monthlySummaries = [];
+
+  groupedTransactions.forEach((monthKey, monthlyTransactions) {
+    monthlySummaries.add(_createMonthlySummary(monthlyTransactions));
+  });
+
+  return monthlySummaries;
 }
 
-/// Обновляем данные по категории в зависимости от типа транзакции
-void _updateCategoryData(
-  Map<String, dynamic> monthData,
-  String categoryName,
-  int transactionType,
-  double amount,
+MonthlyTransactionSummaryModel _createMonthlySummary(
+  List<Transaction> monthlyTransactions,
 ) {
-  final categories =
-      monthData['categories'] as Map<String, Map<String, dynamic>>;
+  final monthName =
+      DateFormat('MMMM', 'ru').format(monthlyTransactions.first.date);
+  final year = monthlyTransactions.first.date.year;
 
-  if (!categories.containsKey(categoryName)) {
-    categories[categoryName] = {
-      'totalExpense': 0.0,
-      'totalIncome': 0.0,
-      'totalOperation': 0,
-    };
-  }
+  final totals = _calculateIncomeAndExpenses(monthlyTransactions);
+  final categoryDataList = _summarizeCategoryData(monthlyTransactions);
 
-  final categoryData = categories[categoryName]!;
-
-  categoryData['totalOperation'] += 1;
-
-  /// Обновляем значение доходов и расходов в зависимости от типа транзакции
-  if (transactionType == OperationTypeEnum.expense.value) {
-    monthData['totalExpense'] += amount;
-    categoryData['totalExpense'] += amount;
-  } else if (transactionType == 1) {
-    monthData['totalIncome'] += amount;
-    categoryData['totalIncome'] += amount;
-  }
+  return MonthlyTransactionSummaryModel(
+    monthName: monthName,
+    year: year,
+    categoryDataList: categoryDataList,
+    totalIncome: totals['income']!,
+    totalExpense: totals['expense']!,
+  );
 }
 
-/// Преобразуем данные в список моделей MonthlyTransactionSummaryModel
-List<MonthlyTransactionSummaryModel> _mapToMonthlyTransactionSummaryList(
-  Map<String, Map<String, dynamic>> monthlyDataMap,
+Map<String, double> _calculateIncomeAndExpenses(
+  List<Transaction> monthlyTransactions,
 ) {
-  return monthlyDataMap.entries.map((entry) {
-    final monthName = entry.key.split(' ')[0];
-    final year = entry.value['year'] as int;
-    final totalIncome = entry.value['totalIncome'] as double;
-    final totalExpense = entry.value['totalExpense'] as double;
+  double totalIncome = 0.0;
+  double totalExpense = 0.0;
 
-    final categoryDataList =
-        (entry.value['categories'] as Map<String, Map<String, dynamic>>)
-            .entries
-            .map(
-              (categoryEntry) => MonthlyCategoryDataModel(
-                categoryName: categoryEntry.key,
-                totalExpense: categoryEntry.value['totalExpense'] as double,
-                totalIncome: categoryEntry.value['totalIncome'] as double,
-                totalOperation: categoryEntry.value['totalOperation'] as int,
-              ),
-            )
-            .toList();
+  for (var transaction in monthlyTransactions) {
+    if (transaction.typeId == OperationTypeEnum.income.value) {
+      totalIncome += transaction.sum;
+    } else {
+      totalExpense += transaction.sum;
+    }
+  }
+  return {'income': totalIncome, 'expense': totalExpense};
+}
 
-    return MonthlyTransactionSummaryModel(
-      monthName: monthName,
-      year: year,
-      categoryDataList: categoryDataList,
-      totalIncome: totalIncome,
-      totalExpense: totalExpense,
-    );
-  }).toList();
+List<MonthlyCategoryDataModel> _summarizeCategoryData(
+  List<Transaction> monthlyTransactions,
+) {
+  Map<int, MonthlyCategoryDataModel> categoryDataMap = {};
+
+  for (var transaction in monthlyTransactions) {
+    final categoryId = transaction.category.id;
+    final categoryTitle = transaction.category.title;
+
+    if (categoryDataMap.containsKey(categoryId)) {
+      final existingData = categoryDataMap[categoryId]!;
+      categoryDataMap[categoryId] = MonthlyCategoryDataModel(
+        categoryName: categoryTitle,
+        totalExpense: existingData.totalExpense +
+            (transaction.typeId != 1 ? transaction.sum : 0),
+        totalIncome: existingData.totalIncome +
+            (transaction.typeId == 1 ? transaction.sum : 0),
+        totalOperation: existingData.totalOperation + 1,
+      );
+    } else {
+      categoryDataMap[categoryId] = MonthlyCategoryDataModel(
+        categoryName: categoryTitle,
+        totalExpense: transaction.typeId != 1 ? transaction.sum : 0,
+        totalIncome: transaction.typeId == 1 ? transaction.sum : 0,
+        totalOperation: 1,
+      );
+    }
+  }
+
+  return categoryDataMap.values.toList();
 }

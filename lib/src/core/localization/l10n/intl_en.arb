@@ -34,5 +34,6 @@
   "addTransactionsAndViewStats": "Добавляйте транзакции и смотрите свою статистику!",
   "profit": "Прибыль",
   "profitDescription": "Прибыль (доходы-расходы)",
-  "deleteTransaction": "Удалить транзакцию?"
+  "deleteTransaction": "Удалить транзакцию?",
+  "IncomeAndExpenses": "Доходы и расходы"
 }

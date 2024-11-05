@@ -32,14 +32,15 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 return const StatisticPlaceholder();
               }
 
-              final data = getMonthlyTransactionSummary(state.transactions);
+              final data = summarizeTransactions(state.transactions);
 
               return ListView(
+                shrinkWrap: true,
                 children: [
                   StatisticTitle(S.of(context).operationsByCategory),
                   AppSizes.gapH16,
                   MonthlyOperationsChart(data),
-                  StatisticTitle(S.of(context).profitDescription),
+                  StatisticTitle(S.of(context).incomeAndExpenses),
                   AppSizes.gapH16,
                   MonthlyProfitDiagram(data),
                 ],

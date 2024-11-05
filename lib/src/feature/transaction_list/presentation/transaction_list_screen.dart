@@ -62,6 +62,7 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
                 return Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     itemCount: state.transactions.length,
                     itemBuilder: (context, index) {
                       final transaction = state.transactions[index];

@@ -409,6 +409,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Доходы и расходы`
+  String get incomeAndExpenses {
+    return Intl.message(
+      'Доходы и расходы',
+      name: 'IncomeAndExpenses',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
