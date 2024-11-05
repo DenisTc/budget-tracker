@@ -4,8 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class MonthlyOperationsChart extends StatelessWidget {
-  const MonthlyOperationsChart(this.data, {super.key});
+class MonthlyCategoriesChart extends StatelessWidget {
+  const MonthlyCategoriesChart(this.data, {super.key});
 
   final List<MonthlyTransactionSummaryModel> data;
 

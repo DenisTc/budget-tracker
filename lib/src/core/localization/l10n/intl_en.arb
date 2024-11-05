@@ -35,5 +35,8 @@
   "profit": "Прибыль",
   "profitDescription": "Прибыль (доходы-расходы)",
   "deleteTransaction": "Удалить транзакцию?",
-  "IncomeAndExpenses": "Доходы и расходы"
+  "incomeAndExpenses": "Доходы и расходы",
+  "usedCategories": "Используемые категории",
+  "emptyHere": "Здесь пусто!",
+  "addTransactionsToControl": "Добавьте новые транзакции чтобы контролировать свои расходы и доходы!"
 }

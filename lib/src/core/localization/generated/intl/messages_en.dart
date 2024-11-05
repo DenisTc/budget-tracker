@@ -27,14 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "IncomeAndExpenses":
-            MessageLookupByLibrary.simpleMessage("Доходы и расходы"),
         "accept": MessageLookupByLibrary.simpleMessage("Применить"),
         "add": MessageLookupByLibrary.simpleMessage("Добавить"),
         "addTransaction":
             MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
         "addTransactionsAndViewStats": MessageLookupByLibrary.simpleMessage(
             "Добавляйте транзакции и смотрите свою статистику!"),
+        "addTransactionsToControl": MessageLookupByLibrary.simpleMessage(
+            "Добавьте новые транзакции чтобы контролировать свои расходы и доходы!"),
         "category": MessageLookupByLibrary.simpleMessage("Категория"),
         "categoryLoadingError":
             MessageLookupByLibrary.simpleMessage("Ошибка загрузки категорий"),
@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dateNdate": m0,
         "deleteTransaction":
             MessageLookupByLibrary.simpleMessage("Удалить транзакцию?"),
+        "emptyHere": MessageLookupByLibrary.simpleMessage("Здесь пусто!"),
         "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
         "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
             "Укажите название новой категории"),
@@ -56,6 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failedToAddCategory": MessageLookupByLibrary.simpleMessage(
             "Не удалось добавить категорию, попробуйте позже"),
         "income": MessageLookupByLibrary.simpleMessage("Доход"),
+        "incomeAndExpenses":
+            MessageLookupByLibrary.simpleMessage("Доходы и расходы"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "operationsByCategory": MessageLookupByLibrary.simpleMessage(
             "Количество операций по категориям:"),
@@ -84,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "transactions": MessageLookupByLibrary.simpleMessage("Транзакции"),
         "typeOfTransaction":
             MessageLookupByLibrary.simpleMessage("Тип транзакции"),
+        "usedCategories":
+            MessageLookupByLibrary.simpleMessage("Используемые категории"),
         "yourTransactions":
             MessageLookupByLibrary.simpleMessage("Ваши транзакции")
       };

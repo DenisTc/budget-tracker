@@ -4,6 +4,7 @@ import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/filter_transaction_list_screen.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/widgets/transaction_card_option.dart';
+import 'package:budget_tracker/src/feature/transaction_list/presentation/widgets/transactions_placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_tracker/src/core/extension/datetime_extension.dart';
@@ -59,6 +60,9 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
                   child: CircularProgressIndicator(),
                 );
               } else if (state is TransactionListLoadSuccess) {
+                if (state.transactions.isEmpty) {
+                  return const Expanded(child: TransactionsPlaceholder());
+                }
                 return Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,

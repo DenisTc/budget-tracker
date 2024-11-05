@@ -1,7 +1,7 @@
 import 'package:budget_tracker/src/core/constant/app_sizes.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/statistics/utils/get_monthly_transaction_summary.dart';
-import 'package:budget_tracker/src/feature/statistics/widgets/monthly_operations_chart.dart';
+import 'package:budget_tracker/src/feature/statistics/widgets/monthly_categories_chart.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/monthly_profit_diagram.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/statistic_placeholder.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/statistic_title.dart';
@@ -37,9 +37,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               return ListView(
                 shrinkWrap: true,
                 children: [
-                  StatisticTitle(S.of(context).operationsByCategory),
+                  StatisticTitle(S.of(context).usedCategories),
                   AppSizes.gapH16,
-                  MonthlyOperationsChart(data),
+                  MonthlyCategoriesChart(data),
                   StatisticTitle(S.of(context).incomeAndExpenses),
                   AppSizes.gapH16,
                   MonthlyProfitDiagram(data),

@@ -414,7 +414,37 @@ class S {
   String get incomeAndExpenses {
     return Intl.message(
       'Доходы и расходы',
-      name: 'IncomeAndExpenses',
+      name: 'incomeAndExpenses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Используемые категории`
+  String get usedCategories {
+    return Intl.message(
+      'Используемые категории',
+      name: 'usedCategories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Здесь пусто!`
+  String get emptyHere {
+    return Intl.message(
+      'Здесь пусто!',
+      name: 'emptyHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Добавьте новые транзакции чтобы контролировать свои расходы и доходы!`
+  String get addTransactionsToControl {
+    return Intl.message(
+      'Добавьте новые транзакции чтобы контролировать свои расходы и доходы!',
+      name: 'addTransactionsToControl',
       desc: '',
       args: [],
     );
