@@ -33,5 +33,6 @@
   "operationsByCategory": "Количество операций по категориям:",
   "addTransactionsAndViewStats": "Добавляйте транзакции и смотрите свою статистику!",
   "profit": "Прибыль",
-  "profitDescription": "Прибыль (доходы-расходы)"
+  "profitDescription": "Прибыль (доходы-расходы)",
+  "deleteTransaction": "Удалить транзакцию?"
 }

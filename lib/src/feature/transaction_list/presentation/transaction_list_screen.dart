@@ -3,6 +3,7 @@ import 'package:budget_tracker/src/core/enums/operation_type.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/filter_transaction_list_screen.dart';
+import 'package:budget_tracker/src/feature/transaction_list/presentation/widget/transaction_card_option.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_tracker/src/core/extension/datetime_extension.dart';
@@ -67,31 +68,41 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
                       final date = transaction.date.toStringFormat();
                       final isExpense =
                           transaction.typeId == OperationTypeEnum.expense.value;
-                      return Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(S.of(context).dateNdate(date)),
-                                  Text(
-                                    '${isExpense ? '-' : '+'} ${transaction.sum.toStringAsFixed(2)}',
-                                    style: TextStyle(
-                                      color:
-                                          isExpense ? Colors.red : Colors.green,
-                                      fontWeight: FontWeight.w600,
+                      return GestureDetector(
+                        onTap: () => showModalBottomSheet(
+                          context: context,
+                          useSafeArea: true,
+                          builder: (_) => TransactionCardOption(
+                            transactionId: transaction.id,
+                          ),
+                        ),
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(S.of(context).dateNdate(date)),
+                                    Text(
+                                      '${isExpense ? '-' : '+'} ${transaction.sum.toStringAsFixed(2)}',
+                                      style: TextStyle(
+                                        color: isExpense
+                                            ? Colors.red
+                                            : Colors.green,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const Divider(),
-                              Text(
-                                  '${S.of(context).category}: ${transaction.category.title}'),
-                            ],
+                                  ],
+                                ),
+                                const Divider(),
+                                Text(
+                                    '${S.of(context).category}: ${transaction.category.title}'),
+                              ],
+                            ),
                           ),
                         ),
                       );

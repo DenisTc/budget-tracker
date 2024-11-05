@@ -399,6 +399,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Удалить транзакцию?`
+  String get deleteTransaction {
+    return Intl.message(
+      'Удалить транзакцию?',
+      name: 'deleteTransaction',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

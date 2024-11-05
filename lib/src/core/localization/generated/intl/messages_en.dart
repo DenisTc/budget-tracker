@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Очистить фильтры"),
         "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
         "dateNdate": m0,
+        "deleteTransaction":
+            MessageLookupByLibrary.simpleMessage("Удалить транзакцию?"),
         "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
         "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
             "Укажите название новой категории"),
