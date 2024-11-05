@@ -6,6 +6,22 @@
   </tr>
 </table>
 
+## Скриншоты
+<table>
+  <tr>
+    <td>Главный экран</td>
+    <td>Добавления новой транзакции</td>
+    <td>Экран статистики 1/2</td>
+    <td>Экран статистики 2/2</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/31d6612c-07df-43c5-a30b-0d4cdfa89890" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/3dd64c7b-5946-41fd-9020-cac28a132f3a" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/1de2164f-d49c-4512-81b4-0cf3b5f9a86e" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/e0219999-18be-4eb5-8eba-8f630e77c920" width=270></td>
+  </tr>
+</table>
+
 ## Требования
 
 - **Flutter SDK**: 3.24.4
