@@ -1,4 +1,5 @@
-import 'package:budget_tracker/src/core/enums/operation_type_enum.dart';
+import 'package:budget_tracker/src/core/constant/app_sizes.dart';
+import 'package:budget_tracker/src/core/enums/operation_type.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/core/theme/app_theme.dart';
 import 'package:budget_tracker/src/feature/category_list/presentation/cubit/category_list_cubit.dart';
@@ -54,7 +55,7 @@ class _FilterTransactionListScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text('Выберите тип транзакции:'),
-                const SizedBox(height: 8.0),
+                AppSizes.gapH8,
                 Row(
                   children: [
                     Expanded(
@@ -70,7 +71,6 @@ class _FilterTransactionListScreenState
                               });
                             },
                           ),
-                          const SizedBox(width: 0),
                           const Text('Доход')
                         ],
                       ),
@@ -88,7 +88,6 @@ class _FilterTransactionListScreenState
                               });
                             },
                           ),
-                          const SizedBox(width: 0),
                           const Text('Расход')
                         ],
                       ),
@@ -96,9 +95,9 @@ class _FilterTransactionListScreenState
                   ],
                 ),
                 const Divider(color: Colors.grey),
-                const SizedBox(height: 8.0),
+                AppSizes.gapH8,
                 const Text('Выберите категорию:'),
-                const SizedBox(height: 16.0),
+                AppSizes.gapH16,
                 BlocBuilder<CategoryListCubit, CategoryListState>(
                   builder: (context, state) {
                     if (state is CategoryListLoading) {
@@ -130,14 +129,14 @@ class _FilterTransactionListScreenState
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
+            AppSizes.gapH16,
             const Divider(color: Colors.grey),
-            const SizedBox(height: 8.0),
+            AppSizes.gapH8,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('${S.of(context).period}:'),
-                const SizedBox(height: 8.0),
+                AppSizes.gapH8,
                 Row(
                   children: [
                     GestureDetector(
@@ -192,9 +191,9 @@ class _FilterTransactionListScreenState
                 ),
               ],
             ),
-            const SizedBox(height: 16.0),
+            AppSizes.gapH16,
             const Divider(color: Colors.grey),
-            const SizedBox(height: 8.0),
+            AppSizes.gapH8,
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -205,7 +204,7 @@ class _FilterTransactionListScreenState
                 child: Text(S.of(context).clearFilters),
               ),
             ),
-            const SizedBox(height: 8.0),
+            AppSizes.gapH8,
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

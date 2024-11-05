@@ -240,7 +240,7 @@ class _CategoryListState extends State<_CategoryList> {
                               activeColor: AppTheme.urobilin,
                               onChanged: (_) {},
                             ),
-                            const SizedBox(width: 8),
+                            AppSizes.gapW8,
                             Expanded(
                               child: Text(category.title),
                             ),

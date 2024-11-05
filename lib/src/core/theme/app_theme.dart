@@ -9,6 +9,26 @@ class AppTheme {
       primaryColor: Colors.black,
       scaffoldBackgroundColor: const Color(0xFFF4F3EF),
       fontFamily: 'OpenSans',
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(
+          fontSize: 32.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        titleLarge: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 16.0,
+          color: Colors.black87,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 14.0,
+          color: Colors.black54,
+        ),
+      ),
       colorScheme: const ColorScheme.light(
         primary: Colors.black,
         onPrimary: Colors.white,

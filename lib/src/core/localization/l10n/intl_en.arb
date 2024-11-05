@@ -28,5 +28,10 @@
   "clearFilters": "Очистить фильтры",
   "clear": "Очистить",
   "enterDate": "Укажите дату",
-  "period": "Период"
+  "period": "Период",
+  "operationsByCategoryForMonthByYear": "Количество опреаций по категориям за {month} {year}",
+  "operationsByCategory": "Количество операций по категориям:",
+  "addTransactionsAndViewStats": "Добавляйте транзакции и смотрите свою статистику!",
+  "profit": "Прибыль",
+  "profitDescription": "Прибыль (доходы-расходы)"
 }

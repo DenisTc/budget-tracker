@@ -1,4 +1,5 @@
-import 'package:budget_tracker/src/core/enums/operation_type_enum.dart';
+import 'package:budget_tracker/src/core/constant/app_sizes.dart';
+import 'package:budget_tracker/src/core/enums/operation_type.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/filter_transaction_list_screen.dart';
@@ -49,7 +50,7 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 8),
+          AppSizes.gapH8,
           BlocBuilder<TransactionListCubit, TransactionListState>(
             builder: (context, state) {
               if (state is TransactionListLoading) {

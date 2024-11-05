@@ -22,12 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(date) => "Дата: ${date}";
 
+  static String m1(month, year) =>
+      "Количество опреаций по категориям за ${month} ${year}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Применить"),
         "add": MessageLookupByLibrary.simpleMessage("Добавить"),
         "addTransaction":
             MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
+        "addTransactionsAndViewStats": MessageLookupByLibrary.simpleMessage(
+            "Добавляйте транзакции и смотрите свою статистику!"),
         "category": MessageLookupByLibrary.simpleMessage("Категория"),
         "categoryLoadingError":
             MessageLookupByLibrary.simpleMessage("Ошибка загрузки категорий"),
@@ -48,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Не удалось добавить категорию, попробуйте позже"),
         "income": MessageLookupByLibrary.simpleMessage("Доход"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
+        "operationsByCategory": MessageLookupByLibrary.simpleMessage(
+            "Количество операций по категориям:"),
+        "operationsByCategoryForMonthByYear": m1,
         "period": MessageLookupByLibrary.simpleMessage("Период"),
         "pleaseEnterAmount":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, введите сумму"),
@@ -60,6 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Пожалуйста, выберите дату"),
         "pleaseSelectTransactionType": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, выберите тип транзакции"),
+        "profit": MessageLookupByLibrary.simpleMessage("Прибыль"),
+        "profitDescription":
+            MessageLookupByLibrary.simpleMessage("Прибыль (доходы-расходы)"),
         "selectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
         "statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
         "sumOfTransaction":

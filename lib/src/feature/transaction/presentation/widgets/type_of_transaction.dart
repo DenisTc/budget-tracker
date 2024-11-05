@@ -1,4 +1,4 @@
-import 'package:budget_tracker/src/core/enums/operation_type_enum.dart';
+import 'package:budget_tracker/src/core/enums/operation_type.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 

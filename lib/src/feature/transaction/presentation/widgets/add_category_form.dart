@@ -41,7 +41,7 @@ class _AddCategoryFormState extends State<AddCategoryForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(height: 8),
+              AppSizes.gapH8,
               TextFormField(
                 controller: titleController,
                 decoration: InputDecoration(

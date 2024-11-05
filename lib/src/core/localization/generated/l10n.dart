@@ -349,6 +349,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Количество опреаций по категориям за {month} {year}`
+  String operationsByCategoryForMonthByYear(Object month, Object year) {
+    return Intl.message(
+      'Количество опреаций по категориям за $month $year',
+      name: 'operationsByCategoryForMonthByYear',
+      desc: '',
+      args: [month, year],
+    );
+  }
+
+  /// `Количество операций по категориям:`
+  String get operationsByCategory {
+    return Intl.message(
+      'Количество операций по категориям:',
+      name: 'operationsByCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Добавляйте транзакции и смотрите свою статистику!`
+  String get addTransactionsAndViewStats {
+    return Intl.message(
+      'Добавляйте транзакции и смотрите свою статистику!',
+      name: 'addTransactionsAndViewStats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Прибыль`
+  String get profit {
+    return Intl.message(
+      'Прибыль',
+      name: 'profit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Прибыль (доходы-расходы)`
+  String get profitDescription {
+    return Intl.message(
+      'Прибыль (доходы-расходы)',
+      name: 'profitDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
