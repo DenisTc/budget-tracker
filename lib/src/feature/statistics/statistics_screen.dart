@@ -1,7 +1,7 @@
 import 'package:budget_tracker/src/core/constant/app_sizes.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/statistics/utils/get_monthly_transaction_summary.dart';
-import 'package:budget_tracker/src/feature/statistics/widgets/monthly_operations_chart%20copy.dart';
+import 'package:budget_tracker/src/feature/statistics/widgets/monthly_operations_chart.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/monthly_profit_diagram.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/statistic_placeholder.dart';
 import 'package:budget_tracker/src/feature/statistics/widgets/statistic_title.dart';
