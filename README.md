@@ -18,7 +18,7 @@
     <td>Экран статистики 2/2</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/af79f94d-7c15-4fce-b231-88b4addabc32" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/538e4053-bcd1-4d74-8ce4-f0a36bf15659" width=270></td>
     <td><img src="https://github.com/user-attachments/assets/38469375-57a1-4a29-9e9e-e8c165d804fa" width=270></td>
     <td><img src="https://github.com/user-attachments/assets/3dd64c7b-5946-41fd-9020-cac28a132f3a" width=270></td>
     <td><img src="https://github.com/user-attachments/assets/6053b048-3d86-4d7f-b5b6-32c0fd17d1a0" width=270></td>
