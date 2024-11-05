@@ -6,19 +6,23 @@
   </tr>
 </table>
 
+[Скачать APK](https://drive.google.com/file/d/1uqtdFCq43_mTlaz-7kHwEKbhABmfegWA/view?usp=sharing)
+
 ## Скриншоты
 <table>
   <tr>
     <td>Главный экран</td>
+    <td>Фильтр транзакций</td>
     <td>Добавления новой транзакции</td>
     <td>Экран статистики 1/2</td>
     <td>Экран статистики 2/2</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/31d6612c-07df-43c5-a30b-0d4cdfa89890" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/af79f94d-7c15-4fce-b231-88b4addabc32" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/38469375-57a1-4a29-9e9e-e8c165d804fa" width=270></td>
     <td><img src="https://github.com/user-attachments/assets/3dd64c7b-5946-41fd-9020-cac28a132f3a" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/1de2164f-d49c-4512-81b4-0cf3b5f9a86e" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/e0219999-18be-4eb5-8eba-8f630e77c920" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/6053b048-3d86-4d7f-b5b6-32c0fd17d1a0" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/ccd639f0-2d84-48fd-ac47-eb44a617c93e" width=270></td>
   </tr>
 </table>
 
