@@ -4,7 +4,7 @@ import 'package:budget_tracker/src/feature/statistics/data/models/monthly_transa
 import 'package:budget_tracker/src/feature/transaction/domain/entities/transaction.dart';
 import 'package:intl/intl.dart';
 
-List<MonthlyTransactionSummaryModel> summarizeTransactions(
+List<MonthlyTransactionSummaryModel> summarizeDataToStatistics(
   List<Transaction> transactions,
 ) {
   transactions.sort((a, b) => a.date.compareTo(b.date));

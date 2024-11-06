@@ -24,6 +24,14 @@ import '../../feature/category/domain/usecases/update_category.dart' as _i941;
 import '../../feature/category/presentation/cubit/category_cubit.dart' as _i618;
 import '../../feature/category_list/presentation/cubit/category_list_cubit.dart'
     as _i171;
+import '../../feature/statistics/data/datasource/statistics_local_data_source.dart'
+    as _i368;
+import '../../feature/statistics/data/repos/transaction_repo_impl.dart'
+    as _i807;
+import '../../feature/statistics/domain/repos/statistics_repo.dart' as _i1022;
+import '../../feature/statistics/domain/usecases/get_statistics.dart' as _i409;
+import '../../feature/statistics/presentation/cubit/statistics_cubit.dart'
+    as _i623;
 import '../../feature/transaction/data/datasource/transaction_local_data_source.dart'
     as _i1048;
 import '../../feature/transaction/data/repos/transaction_repo_impl.dart'
@@ -59,11 +67,20 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i58.CategoryLocalDataSourceImpl(gh<_i982.AppDatabase>()));
     gh.lazySingleton<_i1048.TransactionLocalDataSource>(
         () => _i1048.TransactionLocalDataSourceImpl(gh<_i982.AppDatabase>()));
+    gh.lazySingleton<_i368.StatisticsLocalDataSource>(
+        () => _i368.StatisticsLocalDataSourceImpl(gh<_i982.AppDatabase>()));
+    gh.lazySingleton<_i1022.StatisticsRepository>(() =>
+        _i807.StatisticsRepositoryImpl(
+            gh<_i1048.TransactionLocalDataSource>()));
+    gh.lazySingleton<_i409.GetStatisticsUseCase>(
+        () => _i409.GetStatisticsUseCase(gh<_i1022.StatisticsRepository>()));
     gh.lazySingleton<_i17.TransactionRepository>(() =>
         _i564.TransactionRepositoryImpl(
             gh<_i1048.TransactionLocalDataSource>()));
     gh.lazySingleton<_i999.CategoryRepository>(
         () => _i889.CategoryRepositoryImpl(gh<_i58.CategoryLocalDataSource>()));
+    gh.singleton<_i623.StatisticsCubit>(
+        () => _i623.StatisticsCubit(gh<_i409.GetStatisticsUseCase>()));
     gh.lazySingleton<_i941.UpdateCategoryUseCase>(
         () => _i941.UpdateCategoryUseCase(gh<_i999.CategoryRepository>()));
     gh.lazySingleton<_i691.CheckisExistCategoryUseCase>(() =>

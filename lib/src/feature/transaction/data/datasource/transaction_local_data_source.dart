@@ -1,4 +1,5 @@
 import 'package:budget_tracker/src/core/database/app_database.dart';
+import 'package:budget_tracker/src/feature/statistics/data/models/monthly_transaction_summary_model.dart';
 import 'package:budget_tracker/src/feature/transaction/data/models/transaction_model.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,6 +10,8 @@ abstract interface class TransactionLocalDataSource {
     int? categoryId,
     int? type,
   });
+
+  Future<List<MonthlyTransactionSummaryModel>> getStatistics();
 
   Future<void> add(TransactionModel transaction);
 
@@ -48,4 +51,8 @@ class TransactionLocalDataSourceImpl implements TransactionLocalDataSource {
         categoryId: categoryId,
         type: type,
       );
+
+  @override
+  Future<List<MonthlyTransactionSummaryModel>> getStatistics() async =>
+      await db.transactionsDao.getTransactionStatistics();
 }

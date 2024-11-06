@@ -1,5 +1,5 @@
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
-import 'package:budget_tracker/src/feature/statistics/statistics_screen.dart';
+import 'package:budget_tracker/src/feature/statistics/presentation/statistics_screen.dart';
 import 'package:budget_tracker/src/feature/transaction/presentation/add_transaction_screen.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/transaction_list_screen.dart';
 import 'package:flutter/material.dart';

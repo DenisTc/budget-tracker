@@ -1,13 +1,10 @@
-class MonthlyCategoryDataModel {
-  final String categoryName;
-  final double totalExpense;
-  final double totalIncome;
-  final int totalOperation;
+import 'package:budget_tracker/src/feature/statistics/domain/entities/monthly_category_data.dart';
 
-  MonthlyCategoryDataModel({
-    required this.categoryName,
-    required this.totalExpense,
-    required this.totalIncome,
-    required this.totalOperation,
+class MonthlyCategoryDataModel extends MonthlyCategoryData {
+  const MonthlyCategoryDataModel({
+    required super.categoryName,
+    required super.totalExpense,
+    required super.totalIncome,
+    required super.totalOperation,
   });
 }

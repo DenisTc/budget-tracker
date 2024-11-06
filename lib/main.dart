@@ -4,6 +4,7 @@ import 'package:budget_tracker/src/core/theme/app_theme.dart';
 import 'package:budget_tracker/src/feature/category/presentation/cubit/category_cubit.dart';
 import 'package:budget_tracker/src/feature/category_list/presentation/cubit/category_list_cubit.dart';
 import 'package:budget_tracker/src/feature/dashboard/dashboard.dart';
+import 'package:budget_tracker/src/feature/statistics/presentation/cubit/statistics_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction/presentation/cubit/transaction_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,9 @@ class MainApp extends StatelessWidget {
         ),
         BlocProvider<CategoryListCubit>(
           create: (context) => getIt<CategoryListCubit>(),
+        ),
+        BlocProvider<StatisticsCubit>(
+          create: (context) => getIt<StatisticsCubit>(),
         ),
       ],
       child: MaterialApp(
