@@ -25,7 +25,7 @@ class MonthlyCategoriesChart extends StatelessWidget {
         final dataChar = currentMonthData.categoryDataList
             .map((data) => MapEntry(
                   data.categoryName,
-                  data.totalOperation.toDouble(),
+                  data.totalExpense + data.totalIncome,
                 ))
             .toList();
 

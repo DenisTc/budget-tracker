@@ -3,6 +3,7 @@ import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/statistics/data/models/monthly_transaction_summary_model.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:budget_tracker/src/core/extension/string_extension.dart';
 
 class MonthlyProfitDiagram extends StatelessWidget {
   const MonthlyProfitDiagram(this.data, {super.key});
@@ -26,7 +27,7 @@ class MonthlyProfitDiagram extends StatelessWidget {
               ColumnSeries<_ChartData, String>(
                 dataSource: dataChar,
                 animationDuration: 0,
-                xValueMapper: (_ChartData data, _) => data.x,
+                xValueMapper: (_ChartData data, _) => data.x.capitalize(),
                 yValueMapper: (_ChartData data, _) => data.y1,
                 pointColorMapper: (_ChartData data, _) => Colors.green,
               ),
@@ -35,7 +36,7 @@ class MonthlyProfitDiagram extends StatelessWidget {
                 opacity: 0.9,
                 width: 0.4,
                 animationDuration: 0,
-                xValueMapper: (_ChartData data, _) => data.x,
+                xValueMapper: (_ChartData data, _) => data.x.capitalize(),
                 yValueMapper: (_ChartData data, _) => data.y,
                 pointColorMapper: (_ChartData data, _) => Colors.red,
               ),
@@ -49,7 +50,7 @@ class MonthlyProfitDiagram extends StatelessWidget {
                 size: 12,
                 label: S.of(context).income,
               ),
-              const SizedBox(width: 16),
+              AppSizes.gapW16,
               AppSizes.gapW16,
               _ColorCircleLabel(
                 color: Colors.red,
@@ -94,7 +95,7 @@ class _ColorCircleLabel extends StatelessWidget {
             shape: BoxShape.circle,
           ),
         ),
-        const SizedBox(width: 4),
+        AppSizes.gapW4,
         Text(
           label,
           style: const TextStyle(fontSize: 14),

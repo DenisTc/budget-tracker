@@ -449,6 +449,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Удалить`
+  String get delete {
+    return Intl.message(
+      'Удалить',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Редактировать`
+  String get edit {
+    return Intl.message(
+      'Редактировать',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Добавить категорию`
+  String get addCategory {
+    return Intl.message(
+      'Добавить категорию',
+      name: 'addCategory',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,5 +1,6 @@
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/core/theme/app_theme.dart';
+import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -144,12 +145,14 @@ class CategoryBottomSheet extends StatefulWidget {
 class _CategoryBottomSheetState extends State<CategoryBottomSheet> {
   late final CategoryCubit categoryCubit;
   late final CategoryListCubit categoryListCubit;
+  late final TransactionListCubit transactionsCubit;
 
   @override
   void initState() {
     super.initState();
     categoryCubit = context.read<CategoryCubit>();
     categoryListCubit = context.read<CategoryListCubit>();
+    transactionsCubit = context.read<TransactionListCubit>();
   }
 
   @override
@@ -158,21 +161,23 @@ class _CategoryBottomSheetState extends State<CategoryBottomSheet> {
       listener: (context, state) {
         if (state is CategoryRemoveSuccess) {
           categoryListCubit.getCategories();
+          transactionsCubit.getTransactions();
         }
         if (state is CategoryUpdateSuccess) {
           categoryListCubit.getCategories();
+          transactionsCubit.getTransactions();
           Navigator.pop(context);
         }
       },
-      child: const Padding(
-        padding: EdgeInsets.all(16),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _AddNewCategoryButton(),
-            SizedBox(height: 8),
-            _CategoryList(),
+            const _AddNewCategoryButton(),
+            AppSizes.gapH8,
+            const _CategoryList(),
           ],
         ),
       ),
@@ -228,17 +233,20 @@ class _CategoryListState extends State<_CategoryList> {
                   children: [
                     Expanded(
                       child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
                         onTap: () {
                           categoryController?.value = category;
                           setState(() {});
                         },
                         child: Row(
                           children: [
-                            Radio<CategoryModel>(
-                              value: category,
-                              groupValue: categoryController?.value,
-                              activeColor: AppTheme.urobilin,
-                              onChanged: (_) {},
+                            AbsorbPointer(
+                              child: Radio<CategoryModel>(
+                                value: category,
+                                groupValue: categoryController?.value,
+                                activeColor: AppTheme.urobilin,
+                                onChanged: (_) {},
+                              ),
                             ),
                             AppSizes.gapW8,
                             Expanded(
@@ -261,13 +269,13 @@ class _CategoryListState extends State<_CategoryList> {
                         }
                       },
                       itemBuilder: (BuildContext context) => [
-                        const PopupMenuItem<CategoryActionEnum>(
+                        PopupMenuItem<CategoryActionEnum>(
                           value: CategoryActionEnum.edit,
-                          child: Text('Редактировать'),
+                          child: Text(S.of(context).edit),
                         ),
-                        const PopupMenuItem<CategoryActionEnum>(
+                        PopupMenuItem<CategoryActionEnum>(
                           value: CategoryActionEnum.remove,
-                          child: Text('Удалить'),
+                          child: Text(S.of(context).delete),
                         ),
                       ],
                     ),
@@ -303,13 +311,13 @@ class _AddNewCategoryButton extends StatelessWidget {
           color: Colors.grey[300],
           borderRadius: BorderRadius.circular(50),
         ),
-        child: const Row(
+        child: Row(
           children: [
-            SizedBox(width: 16),
+            AppSizes.gapW16,
             Expanded(
-              child: Text('Добавить категорию'),
+              child: Text(S.of(context).addCategory),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(12.0),
               child: Icon(Icons.add),
             )

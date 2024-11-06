@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Применить"),
         "add": MessageLookupByLibrary.simpleMessage("Добавить"),
+        "addCategory":
+            MessageLookupByLibrary.simpleMessage("Добавить категорию"),
         "addTransaction":
             MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
         "addTransactionsAndViewStats": MessageLookupByLibrary.simpleMessage(
@@ -47,8 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Очистить фильтры"),
         "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
         "dateNdate": m0,
+        "delete": MessageLookupByLibrary.simpleMessage("Удалить"),
         "deleteTransaction":
             MessageLookupByLibrary.simpleMessage("Удалить транзакцию?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "emptyHere": MessageLookupByLibrary.simpleMessage("Здесь пусто!"),
         "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
         "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(

@@ -56,8 +56,10 @@ class _TransactionListScreenState extends State<TransactionListScreen> {
           BlocBuilder<TransactionListCubit, TransactionListState>(
             builder: (context, state) {
               if (state is TransactionListLoading) {
-                return const Center(
-                  child: CircularProgressIndicator(),
+                return const Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
                 );
               } else if (state is TransactionListLoadSuccess) {
                 if (state.transactions.isEmpty) {

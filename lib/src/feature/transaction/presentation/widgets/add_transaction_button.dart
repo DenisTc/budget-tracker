@@ -1,6 +1,7 @@
 import 'package:budget_tracker/src/core/extension/datetime_extension.dart';
 import 'package:budget_tracker/src/core/localization/generated/l10n.dart';
 import 'package:budget_tracker/src/feature/category/data/models/category.dart';
+import 'package:budget_tracker/src/feature/statistics/presentation/cubit/statistics_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction/data/models/transaction_model.dart';
 import 'package:budget_tracker/src/feature/transaction/presentation/cubit/transaction_cubit.dart';
 import 'package:budget_tracker/src/feature/transaction_list/presentation/cubit/transaction_list_cubit.dart';
@@ -31,6 +32,7 @@ class AddTransactionButton extends StatelessWidget {
         listener: (context, state) {
           if (state is TransactionAddSuccess) {
             context.read<TransactionListCubit>().getTransactions();
+            context.read<StatisticsCubit>().getStatistics();
             Navigator.pop(context);
           }
         },
