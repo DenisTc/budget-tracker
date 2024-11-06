@@ -8,21 +8,40 @@
 
 [Скачать APK](https://drive.google.com/file/d/1uqtdFCq43_mTlaz-7kHwEKbhABmfegWA/view?usp=sharing)
 
+
 ## Скриншоты
 <table>
   <tr>
-    <td>Главный экран</td>
-    <td>Фильтр транзакций</td>
-    <td>Добавления новой транзакции</td>
+    <td>Главный экран(пустой)</td>
+    <td>Главный экран(с транзакциями)</td>
+    <td>Главный экран(с вкл. фильтрами)</td>
+    <td>Экран фильтров транзакций</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/0cda6817-d6c0-4806-bca6-1aa42aa85a16" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/e71304d2-5db5-476d-935d-5cf8cef99daa" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/7c148c55-4c4a-4155-ab97-77c576510758" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/f0731766-e41f-41cb-98bd-02bfb8bb854a" width=270></td>
+  </tr>
+  <tr>
+    <td>Удаление транзакции</td>
+    <td>Добавление новой транзакции</td>
+    <td>Выбор категории</td>
+    <td>Экран статистики(пустой)</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/657d5c19-e8bc-4cc9-91ac-171c85ede6b3" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/d56ac8eb-93b1-4269-8f94-1be58c980153" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/76e33841-e226-4862-9e29-3dfea2d97d2e" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/f6de3aba-f56b-4faf-9c01-cb3d033d38b5" width=270></td>
+  </tr>
+<tr>
     <td>Экран статистики 1/2</td>
     <td>Экран статистики 2/2</td>
   </tr>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/538e4053-bcd1-4d74-8ce4-f0a36bf15659" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/38469375-57a1-4a29-9e9e-e8c165d804fa" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/3dd64c7b-5946-41fd-9020-cac28a132f3a" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/6053b048-3d86-4d7f-b5b6-32c0fd17d1a0" width=270></td>
-    <td><img src="https://github.com/user-attachments/assets/ccd639f0-2d84-48fd-ac47-eb44a617c93e" width=270></td>
+<tr>
+    <td><img src="https://github.com/user-attachments/assets/8fcb5f68-5d1c-4369-a820-0436ab3f4329" width=270></td>
+    <td><img src="https://github.com/user-attachments/assets/bf56ce72-29ee-4736-8229-3f561cc042c7" width=270></td>
   </tr>
 </table>
 
