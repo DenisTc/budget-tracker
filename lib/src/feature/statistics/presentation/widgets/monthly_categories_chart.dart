@@ -49,7 +49,6 @@ class MonthlyCategoriesChart extends StatelessWidget {
               series: [
                 PieSeries<MapEntry<String, double>, String>(
                   dataSource: dataChar,
-                  animationDuration: 0,
                   xValueMapper: (MapEntry<String, double> data, _) => data.key,
                   yValueMapper: (MapEntry<String, double> data, _) =>
                       data.value,

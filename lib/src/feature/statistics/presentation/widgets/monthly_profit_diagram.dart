@@ -26,7 +26,6 @@ class MonthlyProfitDiagram extends StatelessWidget {
             series: [
               ColumnSeries<_ChartData, String>(
                 dataSource: dataChar,
-                animationDuration: 0,
                 xValueMapper: (_ChartData data, _) => data.x.capitalize(),
                 yValueMapper: (_ChartData data, _) => data.y1,
                 pointColorMapper: (_ChartData data, _) => Colors.green,
@@ -35,7 +34,6 @@ class MonthlyProfitDiagram extends StatelessWidget {
                 dataSource: dataChar,
                 opacity: 0.9,
                 width: 0.4,
-                animationDuration: 0,
                 xValueMapper: (_ChartData data, _) => data.x.capitalize(),
                 yValueMapper: (_ChartData data, _) => data.y,
                 pointColorMapper: (_ChartData data, _) => Colors.red,
