@@ -6,7 +6,7 @@
   </tr>
 </table>
 
-[Скачать APK](https://drive.google.com/file/d/1uqtdFCq43_mTlaz-7kHwEKbhABmfegWA/view?usp=sharing)
+[Скачать APK](https://drive.google.com/file/d/1IgnXcH01cvIbxVgAzNvsynybkSL15Pua/view?usp=sharing)
 
 
 ## Скриншоты
