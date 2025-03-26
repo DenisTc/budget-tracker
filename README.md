@@ -47,12 +47,12 @@
 
 ## Требования
 
-- **Flutter SDK**: 3.24.4
-- **Dart SDK**: 3.5.4
+- **Flutter SDK**: 3.29.2
+- **Dart SDK**: 3.7.2
 
 ## Запуск проекта
 
-1. Убедитесь, что у вас установлен Flutter SDK версии 3.24.4 и Dart SDK версии 3.5.4.
+1. Убедитесь, что у вас установлен Flutter SDK версии 3.29.2 и Dart SDK версии 3.7.2.
 2. Установите зависимости, выполнив команду:
    ```bash
    flutter pub get
@@ -69,31 +69,30 @@
 ## Используемые плагины
 
 ### Database
-- `drift: ^2.21.0`
-- `drift_flutter: ^0.2.0`
+- `drift: ^2.26.0`
+- `drift_flutter: ^0.2.4`
 - `path_provider: ^2.1.5`
 
 ### State Management
-- `flutter_bloc: ^8.1.6`
-- `bloc: ^8.1.4`
+- `flutter_bloc: ^9.1.0`
+- `bloc: ^9.0.0`
 - `provider: ^6.1.2`
 
 ### DI
-- `get_it: ^8.0.2`
+- `get_it: ^8.0.3`
 - `injectable: ^2.5.0`
-- `injectable_generator: ^2.6.2`
 
 ### UI
-- `syncfusion_flutter_charts: ^27.1.57`
+- `syncfusion_flutter_charts: ^29.1.33`
 - `carousel_slider: ^5.0.0`
 
 ### Other
-- `equatable: ^2.0.5 `
+- `equatable: ^2.0.7`
 
 ### Codegen
-- `drift_dev: ^2.20.1`
-- `injectable_generator: ^2.6.2`
-- `build_runner: ^2.4.12`
+- `drift_dev: ^2.26.0`
+- `build_runner: ^2.4.15`
+- `injectable_generator: ^2.7.0`
 
 
 

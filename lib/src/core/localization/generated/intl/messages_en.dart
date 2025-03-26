@@ -27,73 +27,86 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "accept": MessageLookupByLibrary.simpleMessage("Применить"),
-        "add": MessageLookupByLibrary.simpleMessage("Добавить"),
-        "addCategory":
-            MessageLookupByLibrary.simpleMessage("Добавить категорию"),
-        "addTransaction":
-            MessageLookupByLibrary.simpleMessage("Добавить транзакцию"),
-        "addTransactionsAndViewStats": MessageLookupByLibrary.simpleMessage(
-            "Добавляйте транзакции и смотрите свою статистику!"),
-        "addTransactionsToControl": MessageLookupByLibrary.simpleMessage(
-            "Добавьте новые транзакции чтобы контролировать свои расходы и доходы!"),
-        "category": MessageLookupByLibrary.simpleMessage("Категория"),
-        "categoryLoadingError":
-            MessageLookupByLibrary.simpleMessage("Ошибка загрузки категорий"),
-        "categoryName":
-            MessageLookupByLibrary.simpleMessage("Название категории"),
-        "categoryNameAlreadyExists": MessageLookupByLibrary.simpleMessage(
-            "Категория с таким именем уже существует"),
-        "clear": MessageLookupByLibrary.simpleMessage("Очистить"),
-        "clearFilters":
-            MessageLookupByLibrary.simpleMessage("Очистить фильтры"),
-        "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
-        "dateNdate": m0,
-        "delete": MessageLookupByLibrary.simpleMessage("Удалить"),
-        "deleteTransaction":
-            MessageLookupByLibrary.simpleMessage("Удалить транзакцию?"),
-        "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
-        "emptyHere": MessageLookupByLibrary.simpleMessage("Здесь пусто!"),
-        "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
-        "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
-            "Укажите название новой категории"),
-        "expense": MessageLookupByLibrary.simpleMessage("Расход"),
-        "failedToAddCategory": MessageLookupByLibrary.simpleMessage(
-            "Не удалось добавить категорию, попробуйте позже"),
-        "income": MessageLookupByLibrary.simpleMessage("Доход"),
-        "incomeAndExpenses":
-            MessageLookupByLibrary.simpleMessage("Доходы и расходы"),
-        "ok": MessageLookupByLibrary.simpleMessage("Ок"),
-        "operationsByCategory": MessageLookupByLibrary.simpleMessage(
-            "Количество операций по категориям:"),
-        "operationsByCategoryForMonthByYear": m1,
-        "period": MessageLookupByLibrary.simpleMessage("Период"),
-        "pleaseEnterAmount":
-            MessageLookupByLibrary.simpleMessage("Пожалуйста, введите сумму"),
-        "pleaseEnterAmountGreaterThanZero":
-            MessageLookupByLibrary.simpleMessage(
-                "Пожалуйста, введите сумму больше 0"),
-        "pleaseSelectCategory": MessageLookupByLibrary.simpleMessage(
-            "Пожалуйста, выберите категорию"),
-        "pleaseSelectDate":
-            MessageLookupByLibrary.simpleMessage("Пожалуйста, выберите дату"),
-        "pleaseSelectTransactionType": MessageLookupByLibrary.simpleMessage(
-            "Пожалуйста, выберите тип транзакции"),
-        "profit": MessageLookupByLibrary.simpleMessage("Прибыль"),
-        "profitDescription":
-            MessageLookupByLibrary.simpleMessage("Прибыль (доходы-расходы)"),
-        "selectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
-        "statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
-        "sumOfTransaction":
-            MessageLookupByLibrary.simpleMessage("Сумма транзакции"),
-        "transactionCategory":
-            MessageLookupByLibrary.simpleMessage("Категория транзакции"),
-        "transactions": MessageLookupByLibrary.simpleMessage("Транзакции"),
-        "typeOfTransaction":
-            MessageLookupByLibrary.simpleMessage("Тип транзакции"),
-        "usedCategories":
-            MessageLookupByLibrary.simpleMessage("Используемые категории"),
-        "yourTransactions":
-            MessageLookupByLibrary.simpleMessage("Ваши транзакции")
-      };
+    "accept": MessageLookupByLibrary.simpleMessage("Применить"),
+    "add": MessageLookupByLibrary.simpleMessage("Добавить"),
+    "addCategory": MessageLookupByLibrary.simpleMessage("Добавить категорию"),
+    "addTransaction": MessageLookupByLibrary.simpleMessage(
+      "Добавить транзакцию",
+    ),
+    "addTransactionsAndViewStats": MessageLookupByLibrary.simpleMessage(
+      "Добавляйте транзакции и смотрите свою статистику!",
+    ),
+    "addTransactionsToControl": MessageLookupByLibrary.simpleMessage(
+      "Добавьте новые транзакции чтобы контролировать свои расходы и доходы!",
+    ),
+    "category": MessageLookupByLibrary.simpleMessage("Категория"),
+    "categoryLoadingError": MessageLookupByLibrary.simpleMessage(
+      "Ошибка загрузки категорий",
+    ),
+    "categoryName": MessageLookupByLibrary.simpleMessage("Название категории"),
+    "categoryNameAlreadyExists": MessageLookupByLibrary.simpleMessage(
+      "Категория с таким именем уже существует",
+    ),
+    "clear": MessageLookupByLibrary.simpleMessage("Очистить"),
+    "clearFilters": MessageLookupByLibrary.simpleMessage("Очистить фильтры"),
+    "date": MessageLookupByLibrary.simpleMessage("Дата: \$date"),
+    "dateNdate": m0,
+    "delete": MessageLookupByLibrary.simpleMessage("Удалить"),
+    "deleteTransaction": MessageLookupByLibrary.simpleMessage(
+      "Удалить транзакцию?",
+    ),
+    "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
+    "emptyHere": MessageLookupByLibrary.simpleMessage("Здесь пусто!"),
+    "enterDate": MessageLookupByLibrary.simpleMessage("Укажите дату"),
+    "enterNewCategoryName": MessageLookupByLibrary.simpleMessage(
+      "Укажите название новой категории",
+    ),
+    "expense": MessageLookupByLibrary.simpleMessage("Расход"),
+    "failedToAddCategory": MessageLookupByLibrary.simpleMessage(
+      "Не удалось добавить категорию, попробуйте позже",
+    ),
+    "income": MessageLookupByLibrary.simpleMessage("Доход"),
+    "incomeAndExpenses": MessageLookupByLibrary.simpleMessage(
+      "Доходы и расходы",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("Ок"),
+    "operationsByCategory": MessageLookupByLibrary.simpleMessage(
+      "Количество операций по категориям:",
+    ),
+    "operationsByCategoryForMonthByYear": m1,
+    "period": MessageLookupByLibrary.simpleMessage("Период"),
+    "pleaseEnterAmount": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите сумму",
+    ),
+    "pleaseEnterAmountGreaterThanZero": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите сумму больше 0",
+    ),
+    "pleaseSelectCategory": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите категорию",
+    ),
+    "pleaseSelectDate": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите дату",
+    ),
+    "pleaseSelectTransactionType": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите тип транзакции",
+    ),
+    "profit": MessageLookupByLibrary.simpleMessage("Прибыль"),
+    "profitDescription": MessageLookupByLibrary.simpleMessage(
+      "Прибыль (доходы-расходы)",
+    ),
+    "selectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
+    "sumOfTransaction": MessageLookupByLibrary.simpleMessage(
+      "Сумма транзакции",
+    ),
+    "transactionCategory": MessageLookupByLibrary.simpleMessage(
+      "Категория транзакции",
+    ),
+    "transactions": MessageLookupByLibrary.simpleMessage("Транзакции"),
+    "typeOfTransaction": MessageLookupByLibrary.simpleMessage("Тип транзакции"),
+    "usedCategories": MessageLookupByLibrary.simpleMessage(
+      "Используемые категории",
+    ),
+    "yourTransactions": MessageLookupByLibrary.simpleMessage("Ваши транзакции"),
+  };
 }

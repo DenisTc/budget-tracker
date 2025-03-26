@@ -18,17 +18,20 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,22 +57,12 @@ class S {
 
   /// `Транзакции`
   String get transactions {
-    return Intl.message(
-      'Транзакции',
-      name: 'transactions',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Транзакции', name: 'transactions', desc: '', args: []);
   }
 
   /// `Статистика`
   String get statistics {
-    return Intl.message(
-      'Статистика',
-      name: 'statistics',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Статистика', name: 'statistics', desc: '', args: []);
   }
 
   /// `Добавить транзакцию`
@@ -92,12 +87,7 @@ class S {
 
   /// `Категория`
   String get category {
-    return Intl.message(
-      'Категория',
-      name: 'category',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Категория', name: 'category', desc: '', args: []);
   }
 
   /// `Тип транзакции`
@@ -112,32 +102,17 @@ class S {
 
   /// `Расход`
   String get expense {
-    return Intl.message(
-      'Расход',
-      name: 'expense',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Расход', name: 'expense', desc: '', args: []);
   }
 
   /// `Доход`
   String get income {
-    return Intl.message(
-      'Доход',
-      name: 'income',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Доход', name: 'income', desc: '', args: []);
   }
 
   /// `Добавить`
   String get add {
-    return Intl.message(
-      'Добавить',
-      name: 'add',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Добавить', name: 'add', desc: '', args: []);
   }
 
   /// `Выберите дату`
@@ -212,12 +187,7 @@ class S {
 
   /// `Дата: $date`
   String get date {
-    return Intl.message(
-      'Дата: \$date',
-      name: 'date',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Дата: \$date', name: 'date', desc: '', args: []);
   }
 
   /// `Дата: {date}`
@@ -292,22 +262,12 @@ class S {
 
   /// `Ок`
   String get ok {
-    return Intl.message(
-      'Ок',
-      name: 'ok',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Ок', name: 'ok', desc: '', args: []);
   }
 
   /// `Применить`
   String get accept {
-    return Intl.message(
-      'Применить',
-      name: 'accept',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Применить', name: 'accept', desc: '', args: []);
   }
 
   /// `Очистить фильтры`
@@ -322,32 +282,17 @@ class S {
 
   /// `Очистить`
   String get clear {
-    return Intl.message(
-      'Очистить',
-      name: 'clear',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Очистить', name: 'clear', desc: '', args: []);
   }
 
   /// `Укажите дату`
   String get enterDate {
-    return Intl.message(
-      'Укажите дату',
-      name: 'enterDate',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Укажите дату', name: 'enterDate', desc: '', args: []);
   }
 
   /// `Период`
   String get period {
-    return Intl.message(
-      'Период',
-      name: 'period',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Период', name: 'period', desc: '', args: []);
   }
 
   /// `Количество опреаций по категориям за {month} {year}`
@@ -382,12 +327,7 @@ class S {
 
   /// `Прибыль`
   String get profit {
-    return Intl.message(
-      'Прибыль',
-      name: 'profit',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Прибыль', name: 'profit', desc: '', args: []);
   }
 
   /// `Прибыль (доходы-расходы)`
@@ -432,12 +372,7 @@ class S {
 
   /// `Здесь пусто!`
   String get emptyHere {
-    return Intl.message(
-      'Здесь пусто!',
-      name: 'emptyHere',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Здесь пусто!', name: 'emptyHere', desc: '', args: []);
   }
 
   /// `Добавьте новые транзакции чтобы контролировать свои расходы и доходы!`
@@ -452,22 +387,12 @@ class S {
 
   /// `Удалить`
   String get delete {
-    return Intl.message(
-      'Удалить',
-      name: 'delete',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Удалить', name: 'delete', desc: '', args: []);
   }
 
   /// `Редактировать`
   String get edit {
-    return Intl.message(
-      'Редактировать',
-      name: 'edit',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Редактировать', name: 'edit', desc: '', args: []);
   }
 
   /// `Добавить категорию`
@@ -485,9 +410,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

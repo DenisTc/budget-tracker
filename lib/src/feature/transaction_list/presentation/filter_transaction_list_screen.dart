@@ -12,12 +12,10 @@ class FilterTransactionListScreen extends StatefulWidget {
   const FilterTransactionListScreen({super.key});
 
   @override
-  State<FilterTransactionListScreen> createState() =>
-      _FilterTransactionListScreenState();
+  State<FilterTransactionListScreen> createState() => _FilterTransactionListScreenState();
 }
 
-class _FilterTransactionListScreenState
-    extends State<FilterTransactionListScreen> {
+class _FilterTransactionListScreenState extends State<FilterTransactionListScreen> {
   late final TransactionListCubit cubit;
   String? _selectedDateRangeString;
   DateTimeRange? _selectedDateRange;
@@ -159,21 +157,19 @@ class _FilterTransactionListScreenState
                         }
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.08),
+                              color: Colors.black.withValues(alpha: 0.08),
                               blurRadius: 20,
                               offset: const Offset(0, 2),
                             ),
                           ],
                         ),
-                        child: Text(_selectedDateRangeString ??
-                            S.of(context).enterDate),
+                        child: Text(_selectedDateRangeString ?? S.of(context).enterDate),
                       ),
                     ),
                     const Spacer(),
@@ -252,7 +248,7 @@ class CategoryTag extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.08),
               blurRadius: 20,
               offset: const Offset(0, 2),
             ),

@@ -20,7 +20,7 @@ class StatisticTitle extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 20,
             offset: const Offset(0, 2),
           ),
@@ -30,10 +30,7 @@ class StatisticTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
       ),
     );

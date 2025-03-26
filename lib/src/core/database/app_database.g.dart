@@ -539,7 +539,7 @@ final class $$CategoriesDataModelTableReferences extends BaseReferences<
       get transactionsDataModelRefs {
     final manager = $$TransactionsDataModelTableTableManager(
             $_db, $_db.transactionsDataModel)
-        .filter((f) => f.categoryId.id($_item.id));
+        .filter((f) => f.categoryId.id.sqlEquals($_itemColumn<int>('id')!));
 
     final cache =
         $_typedResult.readTableOrNull(_transactionsDataModelRefsTable($_db));
@@ -699,7 +699,10 @@ class $$CategoriesDataModelTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (transactionsDataModelRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<
+                            CategoriesDataModelData,
+                            $CategoriesDataModelTable,
+                            TransactionsDataModelData>(
                         currentTable: table,
                         referencedTable: $$CategoriesDataModelTableReferences
                             ._transactionsDataModelRefsTable(db),
@@ -755,11 +758,12 @@ final class $$TransactionsDataModelTableReferences extends BaseReferences<
       db.categoriesDataModel.createAlias($_aliasNameGenerator(
           db.transactionsDataModel.categoryId, db.categoriesDataModel.id));
 
-  $$CategoriesDataModelTableProcessedTableManager? get categoryId {
-    if ($_item.categoryId == null) return null;
+  $$CategoriesDataModelTableProcessedTableManager get categoryId {
+    final $_column = $_itemColumn<int>('category_id')!;
+
     final manager =
         $$CategoriesDataModelTableTableManager($_db, $_db.categoriesDataModel)
-            .filter((f) => f.id($_item.categoryId!));
+            .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_categoryIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
